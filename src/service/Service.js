@@ -1,7 +1,7 @@
 import fetch from "isomorphic-fetch"
-
+import {ORIGIN} from "./../constants/Api";
 export default class Service {
-    origin = "http://polar-crag-68604.herokuapp.com/rest/"
+    origin = ORIGIN
 	//origin = "http://localhost:8080/rest/";
     constructor(url) {
         this.url = url
