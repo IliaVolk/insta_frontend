@@ -22,9 +22,8 @@ const history = useRouterHistory(createHistory)({
     basename: '/'
 });
 
-document.write(`<link rel="stylesheet"
-href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
-`)
+document.write(`<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">`)
+//href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
 render(
     (<MuiThemeProvider>
         <Router history={history} onUpdate={() => window.scrollTo(0, 0)} >
