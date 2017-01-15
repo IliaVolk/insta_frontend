@@ -3,13 +3,13 @@ var app = express()
 
 
 app.get("/main.js", function(req, res){
-    //console.log("get main js")
+    console.log("get main js")
     res.sendFile(__dirname+"/dist/main.js")
 })
 app.get("*", function(req, res){
-    //console.log("get index")
+    console.log("get index")
     res.sendFile(__dirname+"/indexLocal.html")
 })
 
 
-app.listen(3001)
+app.listen(process.env.PORT||3001)
