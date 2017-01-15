@@ -2,7 +2,7 @@
 
 var path = require('path');
 var webpack = require('webpack');
-var   mainJsFileName = "src/app/mainGithub.js"
+var   mainJsFileName = "src/app/main.js"
 var plugins = [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin({
