@@ -21,8 +21,7 @@
   },
   "homepage": "https://github.com/BinaryStudioAcademy/bsa-2016-project-base",
   "scripts": {
-    "start":"node serverStatic.js",
-    "startdev": "node server",
+    "start":"node serverStatic.js"
   },
   "dependencies": {
     "es6-promise": "^4.0.5",
