@@ -19,7 +19,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { IndexRoute, Route, Router, browserHistory, useRouterHistory, IndexRedirect } from 'react-router';
 
 const history = useRouterHistory(createHistory)({
-    basename: '/insta_frontend/'
+    basename: '/insta_frontend'
 });
 
 document.write(`<link rel="stylesheet"

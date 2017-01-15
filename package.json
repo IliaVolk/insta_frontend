@@ -1,25 +1,21 @@
 {
-  "name": "bsa-2016-project-base",
+  "name": "insta_project",
   "version": "0.1.0",
-  "description": "A study project during Binary Studio Summer Academy 2016 in JavaScript group",
+  "description": "",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BinaryStudioAcademy/bsa-2016-project-base.git"
+    "url": "https://github.com/IliaVolk/insta_frontend"
   },
   "keywords": [
     "express",
     "webpack",
     "node",
-    "react",
-    "redux"
+    "react"
   ],
-  "author": "bsa16js",
+  "author": "iliavolk",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/BinaryStudioAcademy/bsa-2016-project-base/issues"
-  },
-  "homepage": "https://github.com/BinaryStudioAcademy/bsa-2016-project-base",
+  "homepage": "https://github.com/IliaVolk/insta_frontend",
   "scripts": {
     "start": "node serverStatic.js"
   },
@@ -35,7 +31,8 @@
     "react-dimensions": "^1.3.0",
     "react-dom": "^15.4.1",
     "react-router": "^3.0.0",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-tap-event-plugin": "^2.0.1",
+    "sass-loader": "^4.1.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -47,12 +44,12 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.16.0",
-    "css-loader": "^0.26.1",
-    "node-sass": "^4.1.1",
-    "postcss-loader": "^1.2.1",
-    "sass-loader": "^4.1.1",
-    "style-loader": "^0.13.1",
-    "webpack": "^1.14.0",
+    "css-loader": "0.26.1",
+    "node-sass": "4.1.1",
+    "postcss-loader": "1.0.0",
+    "postcss-load-config": "1.0.0",
+    "style-loader": "0.13.1",
+    "webpack": "1.14.0",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-hot-middleware": "^2.14.0"
   }
