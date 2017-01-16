@@ -49,3 +49,17 @@ body
 
 .hover-cursor:hover
   cursor: pointer!important
+
+
+$lg : 1600px
+$md : 1024px
+$sm : 788px
+$xs : 480px
+@media (min-width: $sm) and (max-width: $md)
+  font-size: 140%
+
+@media (max-width: $md) and (min-width: $xs)
+  font-size: 170%
+
+@media (max-width: $xs)
+  font-size: 200%
