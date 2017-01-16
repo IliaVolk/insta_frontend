@@ -28,34 +28,37 @@ export default class EditingStoreComponent extends React.Component {
             backgroundImage: "url('"+item.image+"')",
             backgroundSize: "cover",
             height: "200px"}
-        return (<div className="width100 row">
+        return (<div className="width100">
 
             <Tabs className="width100">
                 <Tab label="General">
-                    <div className="row width100">
-                        <div
-                            className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
-                            style={imageStyle}>
-                        </div>
-                        <div className="col-xs-12 col-sm-6 col-md-8 col-lg-8">
-                            <TextField
-                                floatingLabelText="Image"
-                                fullWidth={true}
-                                onChange={model.setImageEvent}
-                                value={item.image}/>
-                            <TextField
-                                floatingLabelText="Url"
-                                fullWidth={true}
-                                onChange={model.setUrlEvent}
-                                value={item.url}/>
-                            <TextField
-                                floatingLabelText="Name"
-                                fullWidth={true}
-                                onChange={model.setNameEvent}
-                                value={item.name}/>
+                    <div className="container-fluid">
+                        <div className="row width100">
+                            <div
+                                className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
+                                style={imageStyle}>
+                            </div>
+                            <div className="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+                                <TextField
+                                    floatingLabelText="Image"
+                                    fullWidth={true}
+                                    onChange={model.setImageEvent}
+                                    value={item.image}/>
+                                <TextField
+                                    floatingLabelText="Url"
+                                    fullWidth={true}
+                                    onChange={model.setUrlEvent}
+                                    value={item.url}/>
+                                <TextField
+                                    floatingLabelText="Name"
+                                    fullWidth={true}
+                                    onChange={model.setNameEvent}
+                                    value={item.name}/>
 
+                            </div>
                         </div>
                     </div>
+
                 </Tab>
                 <Tab label="Tags">
                     <CriteriaSelectorComponent model={model.tagSelector}/>

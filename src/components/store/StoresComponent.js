@@ -29,52 +29,66 @@ export default class StoresComponent extends React.Component {
         let {model} = this.props
 
         return (
-            <div className="width100 row">
-                {model.data.map((item, i)=>
-                <Card
-                    className="col-lg-3 col-md-4 col-sm-6 col-xs-12 hover"
-                    onClick={()=>model.setEditingItem(item)}
-                    key={i}>
-                    <CardHeader
-                        title={item.name + " ("+item.place.name+")"}
-                        subtitle={<span>Link: {item.url} <a target="_blank" href={item.url}>
+            <div className="container-fluid">
+                <div className="width100 row">
+                    {model.data.map((item, i)=>
+                        <Card
+                            className="col-lg-3 col-md-4 col-sm-6 col-xs-12 hover"
+                            onClick={()=>model.setEditingItem(item)}
+                            key={i}>
+                            <CardHeader
+                                title={item.name + " ("+item.place.name+")"}
+                                subtitle={<span>Link: {item.url} <a target="_blank" href={item.url}>
                             <RaisedButton label="Open link" onClick={e=>e.stopPropagation()}/></a>
                         </span>}
-                    />
-                    <CardMedia
-                    >
-                        <img src={item.image} />
-                    </CardMedia>
-                    <CardActions>
-                        <div className="displayFlex flexWrap flexCenter">
-                            {item.tags.map(tag=><Chip
-                                key={tag.id}
-                                className="hover-cursor">
-                                {tag.name}
-                                </Chip>)}
+                            />
+                            <CardMedia
+                            >
+                                <img src={item.image} />
+                            </CardMedia>
+                            <CardActions>
+                                <div className="displayFlex flexWrap flexCenter">
+                                    {item.tags.map(tag=><Chip
+                                        key={tag.id}
+                                        className="hover-cursor">
+                                        {tag.name}
+                                    </Chip>)}
 
+                                </div>
+                            </CardActions>
+                        </Card>)}
+                    <div className="displayFlex flexCenter width100">
+                        <div className="container-fluid">
+                            <div className="row">
+                                <div className="col-lg-6 col-md-8 col-sm-12 col-xs-12">
+                                    <Card className="width100">
+                                    <EditingStoreComponent model={model.toAddModel}/>
+                                    <RaisedButton label="Add"
+                                                  fullWidth={true}
+                                                  onClick={model.add}/>
+                                </Card>
+                                </div>
+
+                            </div>
                         </div>
-                    </CardActions>
-                </Card>)}
-                <Card className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <EditingStoreComponent model={model.toAddModel}/>
-                    <RaisedButton label="Add"
-                                  fullWidth={true}
-                                  onClick={model.add}/>
-                </Card>
 
-                <Dialog
-                    bodyStyle={{minHeight: "300px"}}
-                    title="Dialog"
-                    actions={<DialogActions model={model}/>}
+                    </div>
 
-                    modal={false}
-                    open={model.isDialogOpened}
-                    onRequestClose={model.closeDialog}
-                >
-                    <EditingStoreComponent model={model.editingItemModel}/>
-                </Dialog>
+                    <Dialog
+                        bodyStyle={{minHeight: "300px"}}
+                        title="Dialog"
+                        actions={<DialogActions model={model}/>}
+
+                        modal={false}
+                        open={model.isDialogOpened}
+                        autoScrollBodyContent={true}
+                        onRequestClose={model.closeDialog}
+                    >
+                        <EditingStoreComponent model={model.editingItemModel}/>
+                    </Dialog>
+                </div>
             </div>
+
         )
     }
     render() {

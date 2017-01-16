@@ -1,5 +1,7 @@
 import fetch from "isomorphic-fetch"
 import {ORIGIN} from "./../constants/Api";
+import authStorage from "./../app/authStorage"
+
 export default class Service {
     origin = ORIGIN
 	//origin = "http://localhost:8080/rest/";
@@ -14,6 +16,20 @@ export default class Service {
     }
     update(data){
         return this.put(data)
+    }
+    getHeaders(){
+        let headers = {
+            'Content-Type': 'application/json',
+        }
+        try{
+            let id =  authStorage.credentials.user.id
+            if (id){
+                headers["Authorization"] = id
+            }
+        }
+        catch (e){}
+        return headers
+
     }
     get(id){
         return fetch(this.origin+this.url)
@@ -30,9 +46,7 @@ export default class Service {
     post(data){
         return fetch(this.origin+this.url, {
             method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: this.getHeaders(),
             body: JSON.stringify(data)
         })
             .then(this.toJson)
@@ -41,9 +55,7 @@ export default class Service {
     put(data){
         return fetch(this.origin+this.url+"/"+data.id, {
             method: "PUT",
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: this.getHeaders(),
             body:JSON.stringify(data)
         })
             .then(this.toJson)
@@ -52,9 +64,7 @@ export default class Service {
     delete(data){
         return fetch(this.origin+this.url+"/"+data.id, {
             method: "DELETE",
-            headers: {
-                'Content-Type': 'application/json'
-            }
+            headers: this.getHeaders()
         })
             .then(this.toJson)
             .then(this.checkErrors)

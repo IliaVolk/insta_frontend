@@ -35,7 +35,8 @@ export default class PlacesComponent extends React.Component {
                         <CardTitle title={val.name} subtitle={<span>size <b>{val.size}</b></span>} />
 
                     </Card>)}
-                <Card className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div className="width100 displayFlex flexCenter">
+                <Card className="col-lg-4 col-md-6 col-sm-8 col-xs-12">
                     <CardTitle title={<TextField
                         fullWidth={true}
                         floatingLabelText="Place Name"
@@ -48,6 +49,7 @@ export default class PlacesComponent extends React.Component {
                                       onClick={model.add}/>
                     </CardActions>
                 </Card>
+                </div>
 
                 <Dialog
                     title="Dialog"
@@ -55,6 +57,7 @@ export default class PlacesComponent extends React.Component {
                     modal={false}
                     open={model.isDialogOpened}
                     onRequestClose={model.closeDialog}
+                    autoScrollBodyContent={true}
                 >
                     <TextField
                         fullWidth={true}

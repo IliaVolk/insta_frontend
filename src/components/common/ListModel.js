@@ -1,6 +1,6 @@
 import {observable} from "mobx"
 import autobind from 'autobind-decorator'
-
+import messageService from "./messageService"
 export default class ListModel {
     @observable
     isDialogOpened = false
@@ -12,6 +12,7 @@ export default class ListModel {
     editingItem = {}
     @observable
     toAdd = {}
+
     constructor() {
 
     }
@@ -29,6 +30,9 @@ export default class ListModel {
             .then(data=>{
                 this.data = data
                 this.isLoading = false
+            }, err=>{
+                this.isLoading = false
+                messageService.error()
             })
     }
     @autobind
@@ -38,6 +42,9 @@ export default class ListModel {
             .then(data=>{
                 this.closeDialog()
                 this.loadData();
+            }, err=>{
+                this.isLoading = false
+                messageService.error()
             })
     }
     @autobind
@@ -47,6 +54,9 @@ export default class ListModel {
             .then(data=>{
                 this.closeDialog()
                 this.loadData()
+            }, err=>{
+                this.isLoading = false
+                messageService.error()
             })
     }
     @autobind
@@ -56,6 +66,8 @@ export default class ListModel {
             .then(data=>{
                 this.refreshToAdd();
                 this.loadData()
+            }, err=>{
+                this.isLoading = false
             })
     }
 
