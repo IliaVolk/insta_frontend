@@ -58,8 +58,7 @@ export default class StoresComponent extends React.Component {
                             </CardActions>
                         </Card>)}
                     <div className="displayFlex flexCenter width100">
-                        <div className="container-fluid">
-                            <div className="row">
+
                                 <div className="col-lg-6 col-md-8 col-sm-12 col-xs-12">
                                     <Card className="width100">
                                     <EditingStoreComponent model={model.toAddModel}/>
@@ -67,9 +66,6 @@ export default class StoresComponent extends React.Component {
                                                   fullWidth={true}
                                                   onClick={model.add}/>
                                 </Card>
-                                </div>
-
-                            </div>
                         </div>
 
                     </div>
